@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/Styles/contact.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Contact Us</h1>
+        <p>If you have any questions or need assistance, feel free to reach out to the development team.</p>
+    </header>
+
+    <!-- Layout for Developer Information and Contact Form -->
+    <div class="contact-layout">
+        <!-- Developer Information Section -->
+        <section id="developer-info">
+            <h2>Meet the Developers</h2>
+            <!-- Developer 1 -->
+            <div class="developer">
+                <img src="Images/xan.png" alt="Xaian Paul Belderol" class="developer-image">
+                <h3>Xaian Paul Belderol</h3>
+                <h4>Front End Developer</h4>
+                <p><strong>Email:</strong> <a href="mailto:xaian@example.com">xbelderol_220000001002@uic.edu.ph</a></p>
+                <p><strong>Phone:</strong> 09472708250</p>
+                <p>
+                    <a href="https://www.facebook.com/xaian" target="_blank">Facebook</a> |
+                    <a href="https://github.com/xaian" target="_blank">GitHub</a>
+                </p>
+            </div>
+            <!-- Developer 2 -->
+            <div class="developer">
+                <img src="Images/developer2.jpg" alt="Developer 2" class="developer-image">
+                <h3>Ben Mamaril</h3>
+                <h4>Dataset/Train</h4>
+                <p><strong>Email:</strong> <a href="mailto:developer2@example.com">developer2@example.com</a></p>
+                <p><strong>Phone:</strong> +123 987 6543</p>
+                <p>
+                    <a href="https://www.facebook.com/developer2" target="_blank">Facebook</a> |
+                    <a href="https://github.com/developer2" target="_blank">GitHub</a>
+                </p>
+            </div>
+            <!-- Developer 3 -->
+            <div class="developer">
+                <img src="Images/developer3.jpg" alt="Developer 3" class="developer-image">
+                <h3>Paul Bantawig</h3>
+                <h4>Dataset/Train</h4>
+                <p><strong>Email:</strong> <a href="mailto:developer3@example.com">developer3@example.com</a></p>
+                <p><strong>Phone:</strong> +123 654 3210</p>
+                <p>
+                    <a href="https://www.facebook.com/developer3" target="_blank">Facebook</a> |
+                    <a href="https://github.com/developer3" target="_blank">GitHub</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section id="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="submit_form.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="header-buttons">
+                <!-- Contact Us Button -->
+                <button class="nav-button" onclick="window.location.href='contact.html'">Contact Us</button>
+                <!-- Algorithm Button -->
+                <button class="nav-button" onclick="window.location.href='homepage.html'">Homepage</button>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 All rights reserved.</p>
+    </footer>
+</body>
+</html>

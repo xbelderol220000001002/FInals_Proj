@@ -1,0 +1,181 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;  /* Ensure body takes full height */
+    align-items: center; /* Vertically center content */
+}
+
+/* Container Style */
+.container {
+    max-width: 900px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Header Style */
+header {
+    text-align: center;
+    background-color: #FF96A7;  /* Salmon Pink */
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1em;
+    margin-bottom: 20px;  /* Added margin-bottom to create space between description and buttons */
+}
+
+/* Navigation Buttons Section */
+#additional-links {
+    background-color: #FFB4BC; /* Light Pink background */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#additional-links h2 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;  /* Added margin-top to move buttons down */
+}
+
+.nav-button {
+    background-color: white;
+    color: #FF96A7; /* Salmon Pink text for buttons */
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #FF96A7; /* Salmon Pink background on hover */
+    color: white; /* White text on hover */
+    transform: scale(1.05);
+}
+
+/* Section Style */
+.section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fafafa;
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 2em;
+    color: #FF96A7;  /* Salmon Pink */
+    margin-bottom: 20px;
+}
+
+#algorithmInfo p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+#algorithmInfo span {
+    font-weight: bold;
+}
+
+/* Algorithm Dropdown */
+#algorithm-selection select {
+    padding: 10px;
+    font-size: 1.1em;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+    border-radius: 8px;
+    border: 2px solid #FF96A7;
+    background-color: #f0f0f0;
+}
+
+/* Button Styling for Actions */
+button {
+    background-color: #FF96A7;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #FF5A6A;
+}
+
+/* User Input and Output Styling */
+.user-input {
+    margin-top: 20px;
+}
+
+.user-input input {
+    padding: 12px;
+    font-size: 1.2em;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    border: 2px solid #FF96A7;
+    background-color: #fafafa;
+}
+
+.output-section {
+    margin-top: 20px;
+    font-size: 1.2em;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    font-size: 1.1em;
+    padding: 20px;
+    background-color: #FF96A7;
+    color: white;
+    border-radius: 10px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

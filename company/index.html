@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BreastSense Detection</title>
+    <link rel="stylesheet" href="/Styles/index.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BreastSense Detection</h1>
+            <p>Using machine learning to enhance early detection and diagnosis of breast cancer by analyzing patient data and identifying patterns.</p>
+            <div class="header-buttons">
+                <!-- Contact Us Button -->
+                <button class="nav-button" onclick="window.location.href='contact.html'">Contact Us</button>
+                <!-- Algorithm Button -->
+                <button class="nav-button" onclick="window.location.href='homepage.html'">Homepage</button>
+            </div>
+        </header>
+
+        <!-- Algorithm Selection Section -->
+        <section id="algorithm-selection" class="section">
+            <h2>Select an Algorithm</h2>
+            <select id="algorithmDropdown" onchange="showAlgorithmDetails()">
+                <option value="">-- Select Algorithm --</option>
+                <option value="linear-regression">Linear Regression</option>
+                <option value="naive-bayes">Naive Bayes</option>
+                <option value="knn">K-Nearest Neighbors (KNN)</option>
+                <option value="svm">Support Vector Machine (SVM)</option>
+                <option value="decision-tree">Decision Tree</option>
+                <option value="ann">Artificial Neural Network (ANN)</option>
+            </select>
+        </section>
+
+        <!-- Algorithm Details Section -->
+        <section id="algorithm-details" class="section">
+            <h2>Algorithm Details</h2>
+            <div id="algorithmInfo">
+                <p><strong>Purpose:</strong> <span id="purpose"></span></p>
+                <p><strong>Data Used:</strong> <span id="dataUsed"></span></p>
+                <p><strong>Application Example:</strong> <span id="applicationExample"></span></p>
+            </div>
+
+            <!-- User Input Section -->
+            <div class="user-input">
+                <h4>Input Data</h4>
+                <label for="inputField">Enter relevant data:</label>
+                <input type="text" id="inputField" placeholder="e.g., tumor size, age, etc.">
+                <button onclick="calculateOutput()" class="btn-calculate">Calculate Output</button>
+            </div>
+
+            <!-- Output Section -->
+            <div id="outputSection" class="output-section">
+                <h4>Output:</h4>
+                <p id="algorithmOutput">The result will appear here after you click "Calculate Output".</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2023 Breast Cancer Prediction System | <a href="#contact">Contact Us</a> | <a href="#homepage">Homepage</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Algorithm details data
+        const algorithms = {
+            "linear-regression": {
+                purpose: "Predict tumor size progression over time to aid in treatment planning.",
+                dataUsed: "Patient age, tumor size measurements, and treatment data.",
+                applicationExample: "Forecasts tumor growth based on historical data, helping doctors plan interventions."
+            },
+            "naive-bayes": {
+                purpose: "Classify patient cases as benign or malignant based on diagnostic features.",
+                dataUsed: "Features like cell size, cell shape, and other biomarkers.",
+                applicationExample: "Quickly identifies malignant cases for further testing and treatment."
+            },
+            "knn": {
+                purpose: "Predict the diagnosis based on similarities to previously diagnosed cases.",
+                dataUsed: "Patient symptoms, family history, and tumor characteristics.",
+                applicationExample: "Groups similar patient profiles to suggest possible diagnoses."
+            },
+            "svm": {
+                purpose: "Classify high-dimensional data to accurately identify cancerous cases.",
+                dataUsed: "Tumor dimensions, genetic information, and patient demographics.",
+                applicationExample: "Separates benign and malignant tumors with high accuracy."
+            },
+            "decision-tree": {
+                purpose: "Map out diagnostic decisions to understand risk factors in patient diagnosis.",
+                dataUsed: "Medical history, tumor characteristics, and risk factors.",
+                applicationExample: "Helps doctors understand diagnostic paths and risk predictions."
+            },
+            "ann": {
+                purpose: "Detect complex patterns in data to predict breast cancer risk accurately.",
+                dataUsed: "Imaging data, biomarker levels, and demographic information.",
+                applicationExample: "Provides early diagnosis based on imaging and patient history."
+            }
+        };
+
+        // Show algorithm details when selected
+        function showAlgorithmDetails() {
+            const selectedAlgorithm = document.getElementById("algorithmDropdown").value;
+            const algorithmInfo = algorithms[selectedAlgorithm];
+
+            if (algorithmInfo) {
+                document.getElementById("purpose").textContent = algorithmInfo.purpose;
+                document.getElementById("dataUsed").textContent = algorithmInfo.dataUsed;
+                document.getElementById("applicationExample").textContent = algorithmInfo.applicationExample;
+            } else {
+                document.getElementById("purpose").textContent = "";
+                document.getElementById("dataUsed").textContent = "";
+                document.getElementById("applicationExample").textContent = "";
+            }
+        }
+
+        // Calculate and display output based on user input and selected algorithm
+        function calculateOutput() {
+            const selectedAlgorithm = document.getElementById("algorithmDropdown").value;
+            const userInput = document.getElementById("inputField").value;
+
+            let outputText = "Please select an algorithm and enter data to see the output.";
+
+            if (selectedAlgorithm && userInput) {
+                outputText = `Result for ${selectedAlgorithm.toUpperCase()} with input "${userInput}":`;
+
+                switch (selectedAlgorithm) {
+                    case "linear-regression":
+                        outputText += " Predicted tumor size is approximately 2.5 cm based on historical growth rates.";
+                        break;
+                    case "naive-bayes":
+                        outputText += " Classification: Likely benign with a probability of 85%.";
+                        break;
+                    case "knn":
+                        outputText += " Diagnosis: Similar cases show a high likelihood of benign status.";
+                        break;
+                    case "svm":
+                        outputText += " Result: Confident separation between benign and malignant cases.";
+                        break;
+                    case "decision-tree":
+                        outputText += " Decision path: Low-risk based on current data.";
+                        break;
+                    case "ann":
+                        outputText += " Risk prediction: Moderate risk detected based on complex patterns.";
+                        break;
+                    default:
+                        outputText = "Please select a valid algorithm and enter data.";
+                }
+            }
+
+            document.getElementById("algorithmOutput").textContent = outputText;
+        }
+    </script>
+</body>
+</html>
